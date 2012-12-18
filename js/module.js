@@ -33,8 +33,6 @@ $(function(){
 		},
 
 		addNewLine: function(r){
-			console.log("running addNewLine - r=" + r);
-
 			this.currentRow = this.rowClass + r;
 			this.nextRow = "<li><ul class='row" + (r + 1) + "'>";
 
@@ -42,7 +40,6 @@ $(function(){
 		},
 
 		addAll: function(){
-
 
 			for (var i = 1; i < this.noOfRows +1; i++) {
 				
@@ -58,22 +55,6 @@ $(function(){
 				this.newColl.remove(this.collection.first(this.noOfColumn));
 				this.collection.remove(this.collection.first(this.noOfColumn));
 			};
-
-
-			/*
-
-			sliced = this.collection.models.slice(this.from, this.to);
-            slicedCollection.reset(sliced);
-            slicedCollection.each(this.addOne1);
-/*
-			this.from = 17;
-			this.to = 33;
-
-			sliced = this.collection.models.slice(this.from, this.to);
-            slicedCollection.reset(sliced);
-            slicedCollection.each(this.addOne2);
-*/
-
 		},
 
 		addOne: function(model){
