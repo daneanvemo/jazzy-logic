@@ -42,8 +42,6 @@ $(function(){
 		addAll: function(){
 
 			for (var i = 1; i < this.noOfRows +1; i++) {
-				
-				console.log("for loop - i:" + i)
 
 				this.rowNo = i;
 
@@ -62,8 +60,6 @@ $(function(){
 				model: model
 			});
 			this.row = this.rowClass + this.rowNo;
-
-			console.log("addOne: "+this.row);
 
 			this.$el.find(this.row).append(itemView.render().$el);
 		},
