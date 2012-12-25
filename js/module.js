@@ -20,16 +20,15 @@ $(function(){
 
 			this.collection.on('reset', this.addAll);
 
-			this.newColl = new List();
+			this.workColl = new List();
 
 			this.collection.fetch();
+			var _this = this;
 
 			this.noOfColumn = 16;
 			this.noOfRows = 12;
 			this.rowNo = 1;
 			this.rowClass = ".row";
-			this.row = this.rowClass + this.rowNo;
-
 		},
 
 		addNewLine: function(r){
@@ -45,12 +44,12 @@ $(function(){
 
 				this.rowNo = i;
 
-				this.newColl.reset(this.collection.first(this.noOfColumn));
-				this.newColl.each(this.addOne);
+				this.workColl.reset(this.collection.first(this.noOfColumn));
+				this.workColl.each(this.addOne);
 
 				this.addNewLine(i);
 				
-				this.newColl.remove(this.collection.first(this.noOfColumn));
+				this.workColl.remove(this.collection.first(this.noOfColumn));
 				this.collection.remove(this.collection.first(this.noOfColumn));
 			};
 		},
@@ -87,10 +86,3 @@ $(function(){
 		}
 	});
 });
-/*
-
-		rita upp från 1 - 10
-		Row -> model=li:3  li:32 2 1 1 12 2 1
-		2  21 2 1 1 1 2 21
-
-*/
